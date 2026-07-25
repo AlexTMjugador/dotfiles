@@ -42,9 +42,10 @@ based on the techniques described in the following websites:
 Based on the Arch Linux Wiki article linked above:
 
 ```sh
-git clone --recurse-submodules --bare https://github.com/AlexTMjugador/dotfiles.git ~/.dotfiles
+git clone --bare https://github.com/AlexTMjugador/dotfiles.git ~/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 dotfiles config status.showUntrackedFiles no
+dotfiles submodule update --init --recursive
 ```
 
 The `dotfiles` alias can then be used as a drop-in replacement for `git` when
