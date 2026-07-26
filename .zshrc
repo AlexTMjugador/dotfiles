@@ -118,7 +118,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Set up SSH auth agent socket address to the sanest default
-if [ -f ~/.bitwarden-ssh-agent.sock ]; then
+if [ -S ~/.bitwarden-ssh-agent.sock ]; then
   export SSH_AUTH_SOCK=~/.bitwarden-ssh-agent.sock
 fi
 
