@@ -77,6 +77,14 @@ return {
       end
     end,
   },
+  {
+    -- Patch nvim-jdtls with a pull request that improves its behavior on
+    -- standalone Java projects. This patch can be removed once the PR gets
+    -- merged or superseded. Ref:
+    -- https://codeberg.org/mfussenegger/nvim-jdtls/pulls/26
+    url = "https://codeberg.org/AlexTMjugador/nvim-jdtls.git",
+    branch = "fix/jdtls-invisible-project-importer-compat",
+  },
 
   -- Customize the status line with different buttons
   {
