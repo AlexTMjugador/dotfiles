@@ -74,6 +74,11 @@ ZSH_CUSTOM="$HOME/.config/oh-my-zsh-custom"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git command-not-found zsh-autosuggestions zsh-completions zsh-syntax-highlighting)
 
+# Disable completion-related warnings when sharing related files among different users (e.g., root):
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#zsh_disable_compfix
+# This has to be done before `source`ing Oh My Zsh
+ZSH_DISABLE_COMPFIX=true
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -125,9 +130,6 @@ fi
 # dotfiles alias
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
-# Disable completion-related warnings when sharing related files among different users (e.g., root):
-# https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#zsh_disable_compfix
-# Also put completion cache files under ~/.cache.
-ZSH_DISABLE_COMPFIX=true
+# Put completion cache files under ~/.cache.
 ZSH_COMPDUMP="$HOME/.cache/.zcompdump"
 
