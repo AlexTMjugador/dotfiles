@@ -60,6 +60,8 @@ return {
         "graphql-language-service-cli",
         -- XML language server
         "lemminx",
+        -- TOML language server
+        "tombi",
       },
     },
   },
