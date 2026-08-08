@@ -62,6 +62,8 @@ return {
         "lemminx",
         -- TOML language server
         "tombi",
+        -- HTML language server
+        "html-lsp",
       },
     },
   },
