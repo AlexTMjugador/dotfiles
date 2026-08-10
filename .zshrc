@@ -128,8 +128,7 @@ if [ -S ~/.bitwarden-ssh-agent.sock ]; then
 fi
 
 # dotfiles alias
-alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 
 # Put completion cache files under ~/.cache.
 ZSH_COMPDUMP="$HOME/.cache/.zcompdump"
-
