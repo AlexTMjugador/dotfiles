@@ -13,7 +13,7 @@ return {
 
       local current_dotfiles_branch
       if dotfiles_branch_cmd.code == 0 then
-        current_dotfiles_branch = dotfiles_branch_cmd.stdout
+        current_dotfiles_branch = vim.trim(dotfiles_branch_cmd.stdout)
       else
         current_dotfiles_branch = nil
       end
