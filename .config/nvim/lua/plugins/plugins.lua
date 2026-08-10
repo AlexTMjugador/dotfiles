@@ -27,7 +27,7 @@ return {
         dotfiles_repository = "https://github.com/AlexTMjugador/dotfiles.git",
         dotfiles_branch = current_dotfiles_branch,
         dotfiles_targetPath = "/tmp/.dotfiles",
-        dotfiles_installCommand = ".config/devcontainer-dotfiles/install.sh",
+        dotfiles_install_command = ".config/devcontainer-dotfiles/install.sh",
         shell = "sh",
       })
       require("config.devcontainer_reopen").setup()
