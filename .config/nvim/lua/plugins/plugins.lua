@@ -4,6 +4,20 @@ return {
     "erichlf/devcontainer-cli.nvim",
     dependencies = { "akinsho/toggleterm.nvim" },
     init = function()
+      local dotfiles_branch_cmd = vim
+        .system(
+          { "git", "--git-dir", vim.fn.expand("~/.dotfiles"), "branch", "--show-current" },
+          { text = true, stderr = false, timeout = 7000 }
+        )
+        :wait(10000)
+
+      local current_dotfiles_branch
+      if dotfiles_branch_cmd.code == 0 then
+        current_dotfiles_branch = dotfiles_branch_cmd.stdout
+      else
+        current_dotfiles_branch = nil
+      end
+
       require("devcontainer-cli").setup({
         interactive = false,
         -- Uses the devcontainer CLI dotfiles support: https://github.com/devcontainers/cli/pull/362
@@ -11,10 +25,9 @@ return {
         -- usefully vulnerable to injecting additional switches, including the -b switch used by
         -- dotfiles_branch below.
         dotfiles_repository = "https://github.com/AlexTMjugador/dotfiles.git",
-        -- TODO: pick branch and install script depending on the environment
-        dotfiles_branch = "all",
+        dotfiles_branch = current_dotfiles_branch,
         dotfiles_targetPath = "/tmp/.dotfiles",
-        -- dotfiles_installCommand = "install.sh",
+        dotfiles_installCommand = ".config/devcontainer-dotfiles/install.sh",
         shell = "sh",
       })
       require("config.devcontainer_reopen").setup()
