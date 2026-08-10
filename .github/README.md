@@ -42,7 +42,7 @@ based on the techniques described in the following websites:
 Based on the Arch Linux Wiki article linked above:
 
 ```sh
-git clone --bare https://github.com/AlexTMjugador/dotfiles.git ~/.dotfiles
+git clone --bare https://github.com/AlexTMjugador/dotfiles.git [-b <branch>] ~/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 dotfiles config status.showUntrackedFiles no
 dotfiles submodule update --init --recursive
