@@ -77,6 +77,8 @@ return {
         "tombi",
         -- HTML language server
         "html-lsp",
+        -- systemd units language server
+        "systemd-lsp",
       },
     },
   },
