@@ -1,0 +1,18 @@
+[Unit]
+Description=Session-wide SSH_AUTH_SOCK configuration for password managers with an SSH agent
+Documentation=https://raphaelhertzog.com/2025/11/10/how-to-choose-your-ssh-agent-with-wayland-and-systemd/
+# Enable with: $ systemctl --user enable --now pw-manager-ssh-agent.service
+#
+# For best results, make sure to mask the global ssh-agent.socket unit that
+# comes with e.g. openssh-client on Debian-like distributions, so that the
+# vanilla SSH agent is not started and does not attempt to override
+# SSH_AUTH_SOCK: # systemctl --global mask ssh-agent.socket
+Before=graphical-session-pre.target
+
+[Service]
+Type=oneshot
+ExecStart=-/bin/sh -euc '[ -S ~/.bitwarden-ssh-agent.sock ] && /usr/bin/systemctl --user set-environment SSH_AUTH_SOCK="%h/.bitwarden-ssh-agent.sock"'
+ExecStart=-/bin/sh -euc '[ -S ~/.1password/agent.sock ] && /usr/bin/systemctl --user set-environment SSH_AUTH_SOCK="%h/.1password/agent.sock"'
+
+[Install]
+WantedBy=default.target
