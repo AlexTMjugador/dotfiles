@@ -67,9 +67,10 @@ return {
         "nixfmt",
         -- Required for grug-far
         "ast-grep",
-        -- Required for LSP servers to work.
         -- make-ls is not in Mason yet, it should be provided externally
+        -- Spell checking
         "typos-lsp",
+        -- GraphQL language server
         "graphql-language-service-cli",
         -- XML language server
         "lemminx",
@@ -79,7 +80,7 @@ return {
         "html-lsp",
         -- systemd units language server
         "systemd-lsp",
-        -- GitHub Action workflow linting
+        -- GitHub Actions workflow linting
         "actionlint",
         "zizmor",
       },
