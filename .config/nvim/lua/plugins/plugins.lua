@@ -79,6 +79,9 @@ return {
         "html-lsp",
         -- systemd units language server
         "systemd-lsp",
+        -- GitHub Action workflow linting
+        "actionlint",
+        "zizmor",
       },
     },
   },
