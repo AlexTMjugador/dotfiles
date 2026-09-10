@@ -50,3 +50,16 @@ dotfiles submodule update --init --recursive
 
 The `dotfiles` alias can then be used as a drop-in replacement for `git` when
 managing the version-controlled dotfiles.
+
+## 🔄 Updating
+
+To deploy updates to a branch made at another computer that were pushed to the
+remote repository, standard Git commands can be used. The following commands
+overwrite any local files that would be conflicting to make the local checkout
+match the remote repository:
+
+```sh
+dotfiles fetch
+dotfiles reset --hard origin/<branch>
+dotfiles submodule update --init --recursive
+```
