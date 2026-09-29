@@ -84,6 +84,13 @@ return {
     opts = { live_reload = true },
   },
   {
+    "TheLeoP/powershell.nvim",
+    ---@type powershell.user_config
+    opts = {
+      bundle_path = vim.fn.stdpath("data") .. "/mason/packages/powershell-editor-services",
+    },
+  },
+  {
     "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
@@ -108,6 +115,8 @@ return {
         -- GitHub Actions workflow linting
         "actionlint",
         "zizmor",
+        -- Powershell language server
+        "powershell-editor-services",
       },
     },
   },
