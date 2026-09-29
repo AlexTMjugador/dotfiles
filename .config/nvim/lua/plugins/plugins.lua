@@ -1,3 +1,12 @@
+---@type string
+local replace_keycode
+if vim.fn.has("mac") then
+  replace_keycode = "<D-h>"
+else
+  replace_keycode = "<C-h>"
+end
+
+---@type LazySpec
 return {
   -- Devcontainer support
   {
@@ -49,6 +58,22 @@ return {
         create = "<leader>gwc",
         delete = "<leader>gwd",
         switch = "<leader>gws",
+      },
+    },
+  },
+
+  -- Editor enhancements
+  {
+    "chrisgrieser/nvim-rip-substitute",
+    cmd = "RipSubstitute",
+    keys = {
+      {
+        replace_keycode,
+        function()
+          require("rip-substitute").sub()
+        end,
+        mode = { "n", "x" },
+        desc = "Rip Substitute",
       },
     },
   },
