@@ -1,11 +1,3 @@
----@type string
-local replace_keycode
-if vim.fn.has("mac") then
-  replace_keycode = "<D-h>"
-else
-  replace_keycode = "<C-h>"
-end
-
 ---@type LazySpec
 return {
   -- Devcontainer support
@@ -68,7 +60,7 @@ return {
     cmd = "RipSubstitute",
     keys = {
       {
-        replace_keycode,
+        "g/",
         function()
           require("rip-substitute").sub()
         end,
