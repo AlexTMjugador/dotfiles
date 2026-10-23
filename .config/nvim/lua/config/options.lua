@@ -20,7 +20,7 @@ vim.o.background = "dark"
 -- References:
 -- - https://ahatem.github.io/IoskeleyMono
 -- - https://www.nerdfonts.com
-vim.o.guifont = "IoskeleyMono Nerd Font:h11"
+vim.o.guifont = "IoskeleyMono Nerd Font"
 
 -- The SHELL environment variable may not be set in devcontainers, so Neovim may
 -- default to /bin/sh. For interactive purposes, however, we want to default to
